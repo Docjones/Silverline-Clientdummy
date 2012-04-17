@@ -1,4 +1,4 @@
-//
+  //
 //  AppDelegate.m
 //  Client
 //
@@ -7,19 +7,50 @@
 //
 
 #import "AppDelegate.h"
+#import "Client.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-
-- (void)dealloc
+- (id)init
 {
-    [super dealloc];
+  self = [super init];
+  if (self) {
+    clients=[[NSMutableArray alloc] init];
+    for (int i=0; i<100; i++) {
+      Client *c=[[Client alloc] init];
+      [clients addObject:c];
+      [c release];
+    }
+  }
+  return self;
+}
+- (void)dealloc {
+  [clients removeAllObjects];
+  [clients release];
+  [super dealloc];
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-  // Insert code here to initialize your application
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 }
 
+-(void)sendMessageToClients:(NSString *)msg {
+  [clients makeObjectsPerformSelector:@selector(sendMessage:) withObject:msg];
+}
+- (IBAction)moveUp:(id)sender {
+  [self sendMessageToClients:@"P|M|0|-1|\r\n"];
+}
+- (IBAction)moveDown:(id)sender {
+  [self sendMessageToClients:@"P|M|0|1|\r\n"];
+}
+- (IBAction)moveRight:(id)sender {
+  [self sendMessageToClients:@"P|M|1|0|\r\n"];
+}
+- (IBAction)moveLeft:(id)sender {
+  [self sendMessageToClients:@"P|M|-1|0|\r\n"];
+}
+
+- (IBAction)disconnect:(id)sender {
+  [clients makeObjectsPerformSelector:@selector(disconnect)];
+}
 @end

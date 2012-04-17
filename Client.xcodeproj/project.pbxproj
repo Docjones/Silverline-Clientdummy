@@ -13,6 +13,9 @@
 		497180421528641E00AC95A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 497180401528641E00AC95A4 /* Credits.rtf */; };
 		497180451528641E00AC95A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 497180441528641E00AC95A4 /* AppDelegate.m */; };
 		497180481528641F00AC95A4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497180461528641F00AC95A4 /* MainMenu.xib */; };
+		497180521528645800AC95A4 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 497180511528645800AC95A4 /* Client.m */; };
+		497D48DE1538DF2A006061E2 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 497D48DC1538DF2A006061E2 /* AsyncSocket.m */; settings = {COMPILER_FLAGS = " -fobjc-arc"; }; };
+		497D48E11538E0F9006061E2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 497D48E01538E0F9006061E2 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +24,19 @@
 		497180341528641E00AC95A4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		497180351528641E00AC95A4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		497180361528641E00AC95A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		497180391528641E00AC95A4 /* Client-Info.plist */ = {isa = PBXFileReference; path = "Client-Info.plist"; sourceTree = "<group>"; };
+		497180391528641E00AC95A4 /* Client-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Client-Info.plist"; sourceTree = "<group>"; };
 		4971803B1528641E00AC95A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4971803D1528641E00AC95A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4971803F1528641E00AC95A4 /* Client-Prefix.pch */ = {isa = PBXFileReference; path = "Client-Prefix.pch"; sourceTree = "<group>"; };
+		4971803F1528641E00AC95A4 /* Client-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Client-Prefix.pch"; sourceTree = "<group>"; };
 		497180411528641E00AC95A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		497180431528641E00AC95A4 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		497180431528641E00AC95A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		497180441528641E00AC95A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		497180471528641F00AC95A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		497180501528645800AC95A4 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		497180511528645800AC95A4 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
+		497D48DC1538DF2A006061E2 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		497D48DD1538DF2A006061E2 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		497D48E01538E0F9006061E2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497D48E11538E0F9006061E2 /* Security.framework in Frameworks */,
 				497180321528641E00AC95A4 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +55,11 @@
 		497180221528641E00AC95A4 = {
 			isa = PBXGroup;
 			children = (
+				497D48E01538E0F9006061E2 /* Security.framework */,
+				497180501528645800AC95A4 /* Client.h */,
+				497180511528645800AC95A4 /* Client.m */,
+				497D48DC1538DF2A006061E2 /* AsyncSocket.m */,
+				497D48DD1538DF2A006061E2 /* AsyncSocket.h */,
 				497180371528641E00AC95A4 /* Client */,
 				497180301528641E00AC95A4 /* Frameworks */,
 				4971802E1528641E00AC95A4 /* Products */,
@@ -167,6 +181,8 @@
 			files = (
 				4971803E1528641E00AC95A4 /* main.m in Sources */,
 				497180451528641E00AC95A4 /* AppDelegate.m in Sources */,
+				497180521528645800AC95A4 /* Client.m in Sources */,
+				497D48DE1538DF2A006061E2 /* AsyncSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +302,7 @@
 				4971804D1528641F00AC95A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
