@@ -33,10 +33,19 @@
   NSLog(@"Wrote data");
 }
 
+- (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
+	NSData *strData = [data subdataWithRange:NSMakeRange(0, [data length] - 2)];
+	NSString *msg = [[NSString alloc] initWithData:strData encoding:NSUTF8StringEncoding];
+
+  NSLog(@"Message from Server: %@",msg);
+    
+}
+
 
 -(void)sendMessage:(NSString *)msg {
   NSLog(@"Sending: %@", msg);
   [_socket writeData:[msg dataUsingEncoding:NSUTF8StringEncoding] withTimeout:15 tag:0];
+  [_socket readDataToData:[AsyncSocket CRLFData]  withTimeout:15 tag:0];
 }
 
 -(void)disconnect {

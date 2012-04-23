@@ -17,6 +17,8 @@
 - (IBAction)moveDown:(id)sender;
 - (IBAction)moveRight:(id)sender;
 - (IBAction)moveLeft:(id)sender;
+- (IBAction)connect:(id)sender;
+- (IBAction)quit:(id)sender;
 
 - (IBAction)disconnect:(id)sender;
 

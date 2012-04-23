@@ -17,7 +17,7 @@
   self = [super init];
   if (self) {
     clients=[[NSMutableArray alloc] init];
-    for (int i=0; i<100; i++) {
+    for (int i=0; i<10; i++) {
       Client *c=[[Client alloc] init];
       [clients addObject:c];
       [c release];
@@ -48,6 +48,14 @@
 }
 - (IBAction)moveLeft:(id)sender {
   [self sendMessageToClients:@"P|M|-1|0|\r\n"];
+}
+
+- (IBAction)connect:(id)sender {
+  [self sendMessageToClients:@"A|C|name|pass|email|\r\n"];
+}
+
+- (IBAction)quit:(id)sender {
+  [self sendMessageToClients:@"Q\r\n"];
 }
 
 - (IBAction)disconnect:(id)sender {
